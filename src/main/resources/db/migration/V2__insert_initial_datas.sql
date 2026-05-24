@@ -8,10 +8,10 @@ INSERT INTO products (category_id, name, description, price, quantity) VALUES
 (2, 'Smartphone', 'A latest model smartphone with advanced features.', 699.99, 100),
 (3, 'Headphones', 'Noise-cancelling over-ear headphones.', 199.99, 200);
 
-INSERT INTO customers (first_name, last_name, email) VALUES
-('John', 'Doe', 'john_doe@gmail.com'),
-('Jane', 'Smith', 'jane_smith@gmail.com'),
-('Alice', 'Johnson', 'alice_johnson@gmail.com');
+INSERT INTO customers (first_name, last_name, cpf, birth_date, email) VALUES
+('John', 'Doe', '123.456.789-00', '1990-05-15', 'john_doe@gmail.com'),
+('Jane', 'Smith', '987.654.321-00', '1985-08-22', 'jane_smith@gmail.com'),
+ ('Alice', 'Johnson', '111.222.333-44', '1992-11-30', 'alice_johnson@gmail.com');
 
 INSERT INTO orders (customer_id, total) VALUES
 (1, 1199.98),

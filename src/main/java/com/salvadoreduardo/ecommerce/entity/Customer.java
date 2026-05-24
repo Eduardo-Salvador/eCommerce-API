@@ -25,7 +25,7 @@ public class Customer implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
-    private Integer cpf;
+    private String cpf;
 
     @Column(name = "birth_date")
     private LocalDate birthDate;
@@ -52,7 +52,7 @@ public class Customer implements Serializable {
 
     public Customer() {}
 
-    public Customer(String firstName, String lastName, Integer cpf, LocalDate birthDate, String email) {
+    public Customer(String firstName, String lastName, String cpf, LocalDate birthDate, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cpf = cpf;

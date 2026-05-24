@@ -1,12 +1,12 @@
 CREATE TABLE categories (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL,
     description TEXT
 );
 
 CREATE TABLE products (
-    id SERIAL PRIMARY KEY,
-    category_id INT NOT NULL,
+    id BIGSERIAL PRIMARY KEY,
+    category_id BIGINT NOT NULL,
     name VARCHAR(255) NOT NULL,
     description TEXT,
     price DECIMAL(10, 2) NOT NULL CHECK (price >= 0),
@@ -17,7 +17,7 @@ CREATE TABLE products (
 );
 
 CREATE TABLE customers (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     cpf VARCHAR(14) UNIQUE NOT NULL,
@@ -29,8 +29,8 @@ CREATE TABLE customers (
 );
 
 CREATE TABLE orders (
-    id SERIAL PRIMARY KEY,
-    customer_id INT NOT NULL,
+    id BIGSERIAL PRIMARY KEY,
+    customer_id BIGINT NOT NULL,
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     total DECIMAL(10, 2) NOT NULL CHECK (total >= 0),
@@ -38,9 +38,9 @@ CREATE TABLE orders (
 );
 
 CREATE TABLE order_items (
-    id SERIAL PRIMARY KEY,
-    order_id INT NOT NULL,
-    product_id INT NOT NULL,
+    id BIGSERIAL PRIMARY KEY,
+    order_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
     quantity INT NOT NULL CHECK (quantity > 0),
     price DECIMAL(10, 2) NOT NULL CHECK (price >= 0),
     FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
@@ -48,9 +48,9 @@ CREATE TABLE order_items (
 );
 
 CREATE TABLE reviews (
-    id SERIAL PRIMARY KEY,
-    product_id INT NOT NULL,
-    customer_id INT NOT NULL,
+    id BIGSERIAL PRIMARY KEY,
+    product_id BIGINT NOT NULL,
+    customer_id BIGINT NOT NULL,
     rating INT NOT NULL CHECK (rating >= 1 AND rating <= 5),
     comment TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
