@@ -3,6 +3,7 @@ import com.salvadoreduardo.ecommerce.dto.ProductRequest;
 import com.salvadoreduardo.ecommerce.dto.ProductResponse;
 import com.salvadoreduardo.ecommerce.entity.Category;
 import com.salvadoreduardo.ecommerce.entity.Product;
+import com.salvadoreduardo.ecommerce.exception.RuleException;
 import com.salvadoreduardo.ecommerce.repository.CategoryRepository;
 import com.salvadoreduardo.ecommerce.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,12 +18,12 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
 
-    public ProductResponse createProduct(ProductRequest request) throws IllegalArgumentException {
+    public ProductResponse createProduct(ProductRequest request) throws RuleException {
         if (request.quantity() < 0) {
-            throw new IllegalArgumentException("Quantity cannot be negative");
+            throw new RuleException("Quantity cannot be negative");
         }
         if (request.price().doubleValue() < 0) {
-            throw new IllegalArgumentException("Price cannot be negative");
+            throw new RuleException("Price cannot be negative");
         }
         Category category = findCategoryById(request.categoryId());
         Product product = new Product(category, request.name(), request.description(), request.price(), request.quantity());
@@ -33,28 +34,28 @@ public class ProductService {
         return productRepository.findAll(pageable).map(ProductResponse::fromEntity);
     }
 
-    public ProductResponse getProductById(Long id) throws IllegalArgumentException {
+    public ProductResponse getProductById(Long id) throws RuleException {
         return ProductResponse.fromEntity(findProductById(id));
     }
 
-    public ProductResponse updateProduct(Long id, ProductRequest request) throws IllegalArgumentException {
+    public ProductResponse updateProduct(Long id, ProductRequest request) throws RuleException {
         Product product = findProductById(id);
         Category category = request.categoryId() != null ? findCategoryById(request.categoryId()) : null;
         request.updateProduct(product, category);
         return ProductResponse.fromEntity(productRepository.save(product));
     }
 
-    public void deleteProduct(Long id) throws IllegalArgumentException {
+    public void deleteProduct(Long id) throws RuleException {
         productRepository.delete(findProductById(id));
     }
 
     private Product findProductById(Long id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Product not found"));
+                .orElseThrow(() -> new RuleException("Product not found"));
     }
 
     private Category findCategoryById(Long id) {
         return categoryRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Category not found"));
+                .orElseThrow(() -> new RuleException("Category not found"));
     }
 }

@@ -2,6 +2,7 @@ package com.salvadoreduardo.ecommerce.service;
 import com.salvadoreduardo.ecommerce.dto.CategoryRequest;
 import com.salvadoreduardo.ecommerce.dto.CategoryResponse;
 import com.salvadoreduardo.ecommerce.entity.Category;
+import com.salvadoreduardo.ecommerce.exception.RuleException;
 import com.salvadoreduardo.ecommerce.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -23,22 +24,22 @@ public class CategoryService {
         return categoryRepository.findAll(pageable).map(CategoryResponse::fromEntity);
     }
 
-    public CategoryResponse getCategoryById(Long id) throws IllegalArgumentException {
+    public CategoryResponse getCategoryById(Long id) throws RuleException {
         return CategoryResponse.fromEntity(findCategoryById(id));
     }
 
-    public CategoryResponse updateCategory(Long id, CategoryRequest request) throws IllegalArgumentException {
+    public CategoryResponse updateCategory(Long id, CategoryRequest request) throws RuleException {
         Category category = findCategoryById(id);
         request.updateCategory(category);
         return CategoryResponse.fromEntity(categoryRepository.save(category));
     }
 
-    public void deleteCategory(Long id) throws IllegalArgumentException {
+    public void deleteCategory(Long id) throws RuleException {
         categoryRepository.delete(findCategoryById(id));
     }
 
     private Category findCategoryById(Long id) {
         return categoryRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Category not found"));
+                .orElseThrow(() -> new RuleException("Category not found"));
     }
 }

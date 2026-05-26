@@ -2,6 +2,7 @@ package com.salvadoreduardo.ecommerce.controller;
 import com.salvadoreduardo.ecommerce.dto.CustomerRequest;
 import com.salvadoreduardo.ecommerce.dto.CustomerResponse;
 import com.salvadoreduardo.ecommerce.service.CustomerService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +18,7 @@ public class CustomerController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CustomerResponse createCustomer(@RequestBody CustomerRequest customerRequest){
+    public CustomerResponse createCustomer(@RequestBody @Valid CustomerRequest customerRequest){
         return customerService.createCustomer(customerRequest);
     }
 
@@ -33,7 +34,7 @@ public class CustomerController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CustomerResponse updateCustomer(@PathVariable Long id, @RequestBody CustomerRequest customerRequest){
+    public CustomerResponse updateCustomer(@PathVariable Long id, @RequestBody @Valid CustomerRequest customerRequest){
         return customerService.updateCustomer(id, customerRequest);
     }
 

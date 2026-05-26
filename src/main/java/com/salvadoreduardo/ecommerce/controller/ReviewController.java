@@ -2,6 +2,7 @@ package com.salvadoreduardo.ecommerce.controller;
 import com.salvadoreduardo.ecommerce.dto.ReviewRequest;
 import com.salvadoreduardo.ecommerce.dto.ReviewResponse;
 import com.salvadoreduardo.ecommerce.service.ReviewService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +18,7 @@ public class ReviewController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ReviewResponse createReview(@RequestBody ReviewRequest request) {
+    public ReviewResponse createReview(@RequestBody @Valid ReviewRequest request) {
         return reviewService.createReview(request);
     }
 
@@ -33,7 +34,7 @@ public class ReviewController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ReviewResponse updateReview(@PathVariable Long id, @RequestBody ReviewRequest request) {
+    public ReviewResponse updateReview(@PathVariable Long id, @RequestBody @Valid ReviewRequest request) {
         return reviewService.updateReview(id, request);
     }
 

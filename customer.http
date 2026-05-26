@@ -37,3 +37,29 @@ Content-Type: application/json
 ### Delete a customer by ID
 DELETE {{baseUrl}}/customers/1
 Content-Type: application/json
+
+### Create invalid customer (duplicate CPF or email)
+POST {{baseUrl}}/customers
+Content-Type: application/json
+
+{
+  "firstName": "Heitor",
+  "lastName": "Castanet",
+  "cpf": "332.233.113-00",
+  "birthDate": "1999-12-31",
+  "phone": "+55 32 42521-3213",
+  "email": "castanha123@email.com"
+}
+
+### Create invalid customer (Missing required fields)
+POST {{baseUrl}}/customers
+Content-Type: application/json
+
+{
+  "firstName": "",
+  "lastName": "",
+  "cpf": "",
+  "birthDate": "",
+  "phone": "",
+  "email": "invalidEmailFormat"
+}

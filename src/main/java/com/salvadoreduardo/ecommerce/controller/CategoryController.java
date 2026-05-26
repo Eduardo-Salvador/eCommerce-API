@@ -2,6 +2,7 @@ package com.salvadoreduardo.ecommerce.controller;
 import com.salvadoreduardo.ecommerce.dto.CategoryRequest;
 import com.salvadoreduardo.ecommerce.dto.CategoryResponse;
 import com.salvadoreduardo.ecommerce.service.CategoryService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +18,7 @@ public class CategoryController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CategoryResponse createCategory(@RequestBody CategoryRequest request) {
+    public CategoryResponse createCategory(@RequestBody @Valid CategoryRequest request) {
         return categoryService.createCategory(request);
     }
 
@@ -33,7 +34,7 @@ public class CategoryController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CategoryResponse updateCategory(@PathVariable Long id, @RequestBody CategoryRequest request) {
+    public CategoryResponse updateCategory(@PathVariable Long id, @RequestBody @Valid CategoryRequest request) {
         return categoryService.updateCategory(id, request);
     }
 

@@ -2,6 +2,7 @@ package com.salvadoreduardo.ecommerce.controller;
 import com.salvadoreduardo.ecommerce.dto.OrderRequest;
 import com.salvadoreduardo.ecommerce.dto.OrderResponse;
 import com.salvadoreduardo.ecommerce.service.OrderService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +18,7 @@ public class OrderController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public OrderResponse createOrder(@RequestBody OrderRequest request) {
+    public OrderResponse createOrder(@RequestBody @Valid OrderRequest request) {
         return orderService.createOrder(request);
     }
 
@@ -33,7 +34,7 @@ public class OrderController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public OrderResponse updateOrder(@PathVariable Long id, @RequestBody OrderRequest request) {
+    public OrderResponse updateOrder(@PathVariable Long id, @RequestBody @Valid OrderRequest request) {
         return orderService.updateOrder(id, request);
     }
 

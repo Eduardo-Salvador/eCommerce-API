@@ -4,6 +4,7 @@ import com.salvadoreduardo.ecommerce.dto.ReviewResponse;
 import com.salvadoreduardo.ecommerce.entity.Customer;
 import com.salvadoreduardo.ecommerce.entity.Product;
 import com.salvadoreduardo.ecommerce.entity.Review;
+import com.salvadoreduardo.ecommerce.exception.RuleException;
 import com.salvadoreduardo.ecommerce.repository.CustomerRepository;
 import com.salvadoreduardo.ecommerce.repository.ProductRepository;
 import com.salvadoreduardo.ecommerce.repository.ReviewRepository;
@@ -20,9 +21,9 @@ public class ReviewService {
     private final ProductRepository productRepository;
     private final CustomerRepository customerRepository;
 
-    public ReviewResponse createReview(ReviewRequest request) throws IllegalArgumentException{
+    public ReviewResponse createReview(ReviewRequest request) throws RuleException {
         if (request.rating() < 1 || request.rating() > 5) {
-            throw new IllegalArgumentException("Rating must be between 1 and 5");
+            throw new RuleException("Rating must be between 1 and 5");
         }
         Product product = findProductById(request.productId());
         Customer customer = findCustomerById(request.customerId());
@@ -34,11 +35,11 @@ public class ReviewService {
         return reviewRepository.findAll(pageable).map(ReviewResponse::fromEntity);
     }
 
-    public ReviewResponse getReviewById(Long id) throws IllegalArgumentException {
+    public ReviewResponse getReviewById(Long id) throws RuleException {
         return ReviewResponse.fromEntity(findReviewById(id));
     }
 
-    public ReviewResponse updateReview(Long id, ReviewRequest request) throws IllegalArgumentException {
+    public ReviewResponse updateReview(Long id, ReviewRequest request) throws RuleException {
         Review review = findReviewById(id);
         Product product = request.productId() != null ? findProductById(request.productId()) : null;
         Customer customer = request.customerId() != null ? findCustomerById(request.customerId()) : null;
@@ -46,22 +47,22 @@ public class ReviewService {
         return ReviewResponse.fromEntity(reviewRepository.save(review));
     }
 
-    public void deleteReview(Long id) throws IllegalArgumentException {
+    public void deleteReview(Long id) throws RuleException {
         reviewRepository.delete(findReviewById(id));
     }
 
     private Review findReviewById(Long id) {
         return reviewRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Review not found"));
+                .orElseThrow(() -> new RuleException("Review not found"));
     }
 
     private Product findProductById(Long id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Product not found"));
+                .orElseThrow(() -> new RuleException("Product not found"));
     }
 
     private Customer findCustomerById(Long id) {
         return customerRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
+                .orElseThrow(() -> new RuleException("Customer not found"));
     }
 }
