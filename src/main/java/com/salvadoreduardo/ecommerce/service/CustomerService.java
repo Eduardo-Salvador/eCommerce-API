@@ -21,7 +21,7 @@ public class CustomerService {
         if (customerRequest.cpf() != null && customerRepository.existsByCpf(customerRequest.cpf())) {
             throw new IllegalArgumentException("CPF already exists");
         }
-        Customer customer = new Customer(customerRequest.firstName(), customerRequest.lastName(), customerRequest.cpf(), customerRequest.birthDate(), customerRequest.email());
+        Customer customer = new Customer(customerRequest.firstName(), customerRequest.lastName(), customerRequest.cpf(), customerRequest.birthDate(), customerRequest.phone(), customerRequest.email());
         Customer savedCustomer = customerRepository.save(customer);
         return CustomerResponse.fromEntity(savedCustomer);
     }

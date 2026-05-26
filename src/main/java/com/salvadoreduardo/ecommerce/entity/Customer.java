@@ -30,6 +30,7 @@ public class Customer implements Serializable {
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
+    private String phone;
     private String email;
     private boolean active = true;
 
@@ -52,11 +53,12 @@ public class Customer implements Serializable {
 
     public Customer() {}
 
-    public Customer(String firstName, String lastName, String cpf, LocalDate birthDate, String email) {
+    public Customer(String firstName, String lastName, String cpf, LocalDate birthDate, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cpf = cpf;
         this.birthDate = birthDate;
+        this.phone = phone;
         this.email = email;
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/order-items")
+@RequestMapping("/order-items")
 public class OrderItemController {
 
     private final OrderItemService orderItemService;

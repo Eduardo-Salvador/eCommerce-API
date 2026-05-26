@@ -1,6 +1,5 @@
 package com.salvadoreduardo.ecommerce.dto;
 import com.salvadoreduardo.ecommerce.entity.Customer;
-
 import java.time.LocalDate;
 
 public record CustomerRequest(
@@ -8,6 +7,7 @@ public record CustomerRequest(
         String lastName,
         String cpf,
         LocalDate birthDate,
+        String phone,
         String email
 ) {
     public void updateCustomer(Customer customer) {
@@ -15,6 +15,7 @@ public record CustomerRequest(
         if (lastName != null) customer.setLastName(lastName);
         if (cpf != null) customer.setCpf(cpf);
         if (birthDate != null) customer.setBirthDate(birthDate);
+        if (phone != null) customer.setPhone(phone);
         if (email != null) customer.setEmail(email);
     }
 }

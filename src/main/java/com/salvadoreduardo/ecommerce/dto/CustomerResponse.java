@@ -6,6 +6,7 @@ public record CustomerResponse(
         Long id,
         String firstName,
         String lastName,
+        String phone,
         String email,
         boolean active,
         LocalDateTime createdAt
@@ -15,6 +16,7 @@ public record CustomerResponse(
                 customer.getId(),
                 customer.getFirstName(),
                 customer.getLastName(),
+                customer.getPhone(),
                 customer.getEmail(),
                 customer.isActive(),
                 customer.getCreatedAt()

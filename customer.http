@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:8080
+
+### Create a new customer
+POST {{baseUrl}}/customers
+Content-Type: application/json
+
+{
+  "firstName": "Gabriel",
+  "lastName": "Silva",
+  "cpf": "111.222.333-00",
+  "birthDate": "1992-03-15",
+  "phone": "+55 11 92343-4292",
+  "email": "gabriel@email.com"
+}
+
+### Get all customers with pagination
+GET {{baseUrl}}/customers?page=0&size=10&sort=lastName,asc
+Content-Type: application/json
+
+### Get a customer by ID
+GET {{baseUrl}}/customers/1
+Content-Type: application/json
+
+### Update a customer by ID
+PUT {{baseUrl}}/customers/1
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "cpf": "123.456.789-00",
+    "birthDate": "1990-01-01",
+    "phone": "+55 22225-7890",
+    "email": "newEmailJohn@email.com"
+}
+
+### Delete a customer by ID
+DELETE {{baseUrl}}/customers/1
+Content-Type: application/json

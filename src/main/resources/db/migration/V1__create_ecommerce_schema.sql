@@ -22,6 +22,7 @@ CREATE TABLE customers (
     last_name VARCHAR(255) NOT NULL,
     cpf VARCHAR(14) UNIQUE NOT NULL,
     birth_date DATE NOT NULL,
+    phone VARCHAR(20) NOT NULL CHECK ( phone ~ '^\+?[0-9\s\-]+$' ),
     email VARCHAR(255) UNIQUE NOT NULL,
     active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
