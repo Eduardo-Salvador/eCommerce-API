@@ -5,12 +5,12 @@ POST {{baseUrl}}/customers
 Content-Type: application/json
 
 {
-  "firstName": "Gabriel",
-  "lastName": "Silva",
-  "cpf": "111.222.333-00",
-  "birthDate": "1992-03-15",
-  "phone": "+55 11 92343-4292",
-  "email": "gabriel@email.com"
+  "firstName": "Heitor",
+  "lastName": "Castanet",
+  "cpf": "332.233.113-00",
+  "birthDate": "1999-12-31",
+  "phone": "+55 32 42521-3213",
+  "email": "castanh222a@email.com"
 }
 
 ### Get all customers with pagination
@@ -18,11 +18,11 @@ GET {{baseUrl}}/customers?page=0&size=10&sort=lastName,asc
 Content-Type: application/json
 
 ### Get a customer by ID
-GET {{baseUrl}}/customers/1
+GET {{baseUrl}}/customers/8
 Content-Type: application/json
 
 ### Update a customer by ID
-PUT {{baseUrl}}/customers/1
+PUT {{baseUrl}}/customers/4
 Content-Type: application/json
 
 {

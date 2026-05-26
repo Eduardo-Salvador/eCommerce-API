@@ -3,6 +3,7 @@ import com.salvadoreduardo.ecommerce.dto.CustomerRequest;
 import com.salvadoreduardo.ecommerce.dto.CustomerResponse;
 import com.salvadoreduardo.ecommerce.entity.Customer;
 import com.salvadoreduardo.ecommerce.repository.CustomerRepository;
+import com.salvadoreduardo.ecommerce.util.FormatUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +22,14 @@ public class CustomerService {
         if (customerRequest.cpf() != null && customerRepository.existsByCpf(customerRequest.cpf())) {
             throw new IllegalArgumentException("CPF already exists");
         }
-        Customer customer = new Customer(customerRequest.firstName(), customerRequest.lastName(), customerRequest.cpf(), customerRequest.birthDate(), customerRequest.phone(), customerRequest.email());
+        Customer customer = new Customer(
+                customerRequest.firstName(),
+                customerRequest.lastName(),
+                FormatUtils.normalizeStringToNumber(customerRequest.cpf()),
+                customerRequest.birthDate(),
+                FormatUtils.normalizeStringToNumber(customerRequest.phone()),
+                customerRequest.email()
+        );
         Customer savedCustomer = customerRepository.save(customer);
         return CustomerResponse.fromEntity(savedCustomer);
     }
