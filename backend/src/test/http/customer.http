@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ### Delete a customer by ID
-DELETE {{baseUrl}}/customers/1
+DELETE {{baseUrl}}/customers/2
 Content-Type: application/json
 
 ### Create invalid customer (duplicate CPF or email)
