@@ -1,6 +1,6 @@
 package com.salvadoreduardo.ecommerce.service;
-import com.salvadoreduardo.ecommerce.dto.OrderRequest;
-import com.salvadoreduardo.ecommerce.dto.OrderResponse;
+import com.salvadoreduardo.ecommerce.dto.request.OrderRequest;
+import com.salvadoreduardo.ecommerce.dto.response.OrderResponse;
 import com.salvadoreduardo.ecommerce.entity.Customer;
 import com.salvadoreduardo.ecommerce.entity.Order;
 import com.salvadoreduardo.ecommerce.entity.OrderItem;

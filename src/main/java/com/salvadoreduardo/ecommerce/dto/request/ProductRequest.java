@@ -1,4 +1,4 @@
-package com.salvadoreduardo.ecommerce.dto;
+package com.salvadoreduardo.ecommerce.dto.request;
 import com.salvadoreduardo.ecommerce.entity.Category;
 import com.salvadoreduardo.ecommerce.entity.Product;
 import jakarta.validation.constraints.Min;

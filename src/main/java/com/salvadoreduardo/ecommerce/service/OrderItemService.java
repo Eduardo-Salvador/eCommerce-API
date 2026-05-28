@@ -1,6 +1,6 @@
 package com.salvadoreduardo.ecommerce.service;
-import com.salvadoreduardo.ecommerce.dto.OrderItemRequest;
-import com.salvadoreduardo.ecommerce.dto.OrderItemResponse;
+import com.salvadoreduardo.ecommerce.dto.request.OrderItemRequest;
+import com.salvadoreduardo.ecommerce.dto.response.OrderItemResponse;
 import com.salvadoreduardo.ecommerce.entity.Order;
 import com.salvadoreduardo.ecommerce.entity.OrderItem;
 import com.salvadoreduardo.ecommerce.entity.Product;
@@ -13,7 +13,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
-import java.util.List;
 
 @RequiredArgsConstructor
 @Service

@@ -1,10 +1,9 @@
-package com.salvadoreduardo.ecommerce.dto;
+package com.salvadoreduardo.ecommerce.dto.request;
 import com.salvadoreduardo.ecommerce.entity.Order;
 import com.salvadoreduardo.ecommerce.entity.OrderItem;
 import com.salvadoreduardo.ecommerce.entity.Product;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import java.math.BigDecimal;
 
 public record OrderItemRequest(
         @NotNull(message = "Order ID is required")

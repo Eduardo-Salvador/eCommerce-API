@@ -1,6 +1,6 @@
 package com.salvadoreduardo.ecommerce.service;
-import com.salvadoreduardo.ecommerce.dto.CategoryRequest;
-import com.salvadoreduardo.ecommerce.dto.CategoryResponse;
+import com.salvadoreduardo.ecommerce.dto.request.CategoryRequest;
+import com.salvadoreduardo.ecommerce.dto.response.CategoryResponse;
 import com.salvadoreduardo.ecommerce.entity.Category;
 import com.salvadoreduardo.ecommerce.exception.RuleException;
 import com.salvadoreduardo.ecommerce.repository.CategoryRepository;

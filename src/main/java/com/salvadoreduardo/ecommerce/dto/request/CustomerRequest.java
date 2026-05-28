@@ -1,4 +1,4 @@
-package com.salvadoreduardo.ecommerce.dto;
+package com.salvadoreduardo.ecommerce.dto.request;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.salvadoreduardo.ecommerce.entity.Customer;
 import jakarta.validation.constraints.Email;

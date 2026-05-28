@@ -1,4 +1,4 @@
-package com.salvadoreduardo.ecommerce.dto;
+package com.salvadoreduardo.ecommerce.dto.response;
 import com.salvadoreduardo.ecommerce.entity.Order;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

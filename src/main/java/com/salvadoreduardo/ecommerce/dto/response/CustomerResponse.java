@@ -1,4 +1,4 @@
-package com.salvadoreduardo.ecommerce.dto;
+package com.salvadoreduardo.ecommerce.dto.response;
 import com.salvadoreduardo.ecommerce.entity.Customer;
 import java.time.LocalDateTime;
 

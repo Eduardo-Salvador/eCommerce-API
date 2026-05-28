@@ -1,6 +1,6 @@
 package com.salvadoreduardo.ecommerce.controller;
-import com.salvadoreduardo.ecommerce.dto.OrderItemRequest;
-import com.salvadoreduardo.ecommerce.dto.OrderItemResponse;
+import com.salvadoreduardo.ecommerce.dto.request.OrderItemRequest;
+import com.salvadoreduardo.ecommerce.dto.response.OrderItemResponse;
 import com.salvadoreduardo.ecommerce.service.OrderItemService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

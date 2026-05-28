@@ -1,6 +1,6 @@
 package com.salvadoreduardo.ecommerce.service;
-import com.salvadoreduardo.ecommerce.dto.ReviewRequest;
-import com.salvadoreduardo.ecommerce.dto.ReviewResponse;
+import com.salvadoreduardo.ecommerce.dto.request.ReviewRequest;
+import com.salvadoreduardo.ecommerce.dto.response.ReviewResponse;
 import com.salvadoreduardo.ecommerce.entity.Customer;
 import com.salvadoreduardo.ecommerce.entity.Product;
 import com.salvadoreduardo.ecommerce.entity.Review;

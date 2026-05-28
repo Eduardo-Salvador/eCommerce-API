@@ -1,6 +1,6 @@
 package com.salvadoreduardo.ecommerce.service;
-import com.salvadoreduardo.ecommerce.dto.CustomerRequest;
-import com.salvadoreduardo.ecommerce.dto.CustomerResponse;
+import com.salvadoreduardo.ecommerce.dto.request.CustomerRequest;
+import com.salvadoreduardo.ecommerce.dto.response.CustomerResponse;
 import com.salvadoreduardo.ecommerce.entity.Customer;
 import com.salvadoreduardo.ecommerce.exception.RuleException;
 import com.salvadoreduardo.ecommerce.repository.CustomerRepository;
