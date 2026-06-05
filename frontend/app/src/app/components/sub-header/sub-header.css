@@ -1,0 +1,21 @@
+mat-toolbar {
+  background: #111184;
+  height: 40px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.sub-btn{
+  color: white;
+  font-size: 13px;
+  padding: 0 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sub-btn:hover{
+  border: 1px white solid;
+}

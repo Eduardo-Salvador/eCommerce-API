@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
-    MatBadgeModule
+    MatBadgeModule,
+    RouterLink
   ],
   templateUrl: './header.html',
   styleUrl: './header.css',
@@ -31,13 +33,9 @@ export class Header {
   searchTerm = '';
   protected cartItemCount: number = 4;
 
-  updateCep() {
-    console.log("Update Cep");
-  }
+  updateCep() {}
 
-  loginRegister(): void {
-
-  }
+  loginRegister(): void {  }
 
   goToCart():void {}
 }

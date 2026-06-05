@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <img ngSrc="logo.png" width="90" height="60 " alt="Logo" class="logo">
+  <a routerLink=""><img ngSrc="logo.png" width="90" height="60 " alt="Logo" class="logo"/></a>
 
   <div class="div-address">
     <div class="location-img">
@@ -8,7 +8,7 @@
     <div class="address">
       <span>A entrega será feita em: </span>
       <span>{{address}}</span>
-      <a href="#" class="update-cep" (click)="updateCep()">Atualizar CEP</a>
+      <a href="#" class="update-cep" (click)="$event.preventDefault(); updateCep()">Atualizar CEP</a>
     </div>
   </div>
   <div class="search">

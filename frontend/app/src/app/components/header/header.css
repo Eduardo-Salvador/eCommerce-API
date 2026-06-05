@@ -1,12 +1,11 @@
 mat-toolbar {
   background: #B0C4DE;
-  height: 80px;
+  height: 75px;
   padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 24px;
-  border-bottom: 2px solid #e2e8f0;
 }
 
 /*Logo*/
