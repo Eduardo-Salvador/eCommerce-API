@@ -1,49 +1,49 @@
-<header class="app-header">
-  <table>
-    <tr>
-      <td>
-        <a href="#"><b>techdrop.</b><br><small>com.br</small></a>
-      </td>
-      <td>
-        <img ngSrc="" width="10" height="10"\>
-        <small>A entrega será feita em LOCALIZACAO</small><br>
-        <b>Atualizar CEP</b>
-      </td>
-      <td>
-        <table>
-          <tr>
-            <td><select><option>Todos</option></select></td>
-            <td><input type="text" placeholder="Pesquisar Amazon.com.br"></td>
-            <td><button>🔍</button></td>
-          </tr>
-        </table>
-      </td>
-      <td>
-        <small>Olá, faça seu login</small><br>
-        <b>Contas e Listas ▾</b>
-      </td>
-      <td>
-        <small>Devoluções</small><br>
-        <b>e Pedidos</b>
-      </td>
-      <td>
-        🛒 <b>Carrinho</b>
-      </td>
-    </tr>
-  </table>
+<mat-toolbar>
+  <img ngSrc="logo.png" width="90" height="60 " alt="Logo" class="logo">
 
-  <hr>
+  <div class="div-address">
+    <div class="location-img">
+      <img ngSrc="location-header.png" width="15" height="20" alt="Location Icon">
+    </div>
+    <div class="address">
+      <span>A entrega será feita em: </span>
+      <span>{{address}}</span>
+      <a href="#" class="update-cep" (click)="updateCep()">Atualizar CEP</a>
+    </div>
+  </div>
+  <div class="search">
+    <button
+      class="categories-button"
+      mat-button
+      [matMenuTriggerFor]="menu"
+      #trigger="matMenuTrigger"
+      (click)="trigger.openMenu()">
+      Todos ᐁ
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Notebooks</button>
+      <button mat-menu-item>Celulares</button>
+      <button mat-menu-item>Monitores</button>
+    </mat-menu>
 
-  <table>
-    <tr>
-      <td><a href="#">☰ <b>Todos</b></a></td>
-      <td><a href="#">Ofertas do Dia</a></td>
-      <td><a href="#">Mais Vendidos</a></td>
-      <td><a href="#">Smartphones</a></td>
-      <td><a href="#">Computadores</a></td>
-      <td><a href="#">Games</a></td>
-      <td><a href="#">Acessórios</a></td>
-      <td><a href="#">Novidades na TechDrop</a></td>
-    </tr>
-  </table>
-</header>
+    <mat-form-field appearance="outline" class="search-bar">
+      <mat-label>Pesquisar produtos</mat-label>
+      <input matInput [(ngModel)]="searchTerm">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="login-header">
+    <button class="btn-header" mat-button (click)="loginRegister()">Entre ou Cadastre-se</button>
+  </div>
+
+  <button mat-button class="cart-button" (click)="goToCart()">
+    <mat-icon
+      [matBadge]="cartItemCount"
+      [matBadgeHidden]="cartItemCount === 0"
+      matBadgeColor="warn">
+      shopping_cart
+    </mat-icon>
+    <span>Carrinho</span>
+  </button>
+</mat-toolbar>
