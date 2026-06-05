@@ -1,0 +1,11 @@
+<div class="main-offer">
+  <p class="text-main-box">{{ title }}</p>
+  <div class="offer-grid">
+    @for (product of products; track product.image) {
+      <a>
+        <img [ngSrc]="product.image" [alt]="product.alt" height="120" width="120">
+      </a>
+    }
+  </div>
+  <a routerLink="" class="view-offers">Ver mais ofertas</a>
+</div>

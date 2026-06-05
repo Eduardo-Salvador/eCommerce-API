@@ -1,0 +1,8 @@
+<div class="ad-box">
+  @for (product of ad; track product.image) {
+    <a>
+      <img [ngSrc]="product.image" [alt]="product.alt" height="150" width="250">
+    </a>
+  }
+  <p class="ad-text">Patrocinado Ⓘ</p>
+</div>

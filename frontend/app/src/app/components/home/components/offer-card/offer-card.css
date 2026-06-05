@@ -1,0 +1,38 @@
+.main-offer{
+  background: white;
+  height: 380px;
+  width: 310px;
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  flex: 1;
+}
+
+.text-main-box{
+  color: black;
+  font-weight: 550;
+  font-size: 22px;
+  text-align: center;
+}
+
+.view-offers{
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+.view-offers:hover{
+  color: #2563eb;
+  text-decoration: underline;
+}

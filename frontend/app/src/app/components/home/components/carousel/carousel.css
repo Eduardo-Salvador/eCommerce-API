@@ -1,0 +1,33 @@
+swiper-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-container::part(bullet) {
+  background: white;
+  opacity: 0.5;
+}
+
+swiper-container::part(bullet-active) {
+  background: black;
+  opacity: 1;
+}
+
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  width: 35px;
+  height: 35px;
+  color: white;
+}

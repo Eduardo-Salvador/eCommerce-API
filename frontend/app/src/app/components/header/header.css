@@ -82,7 +82,7 @@ mat-toolbar {
   font-size: 13px !important;
 }
 
-/* LOGIN */
+/*Login*/
 .login-header {
   display: flex;
   gap: 8px;
@@ -100,7 +100,7 @@ mat-toolbar {
 }
 
 .btn-header:hover {
-  background: #D6DEE2;
+  background: #fe601e;
 }
 
 /*Cart*/

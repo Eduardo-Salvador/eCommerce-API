@@ -1,3 +1,12 @@
 <body>
-<p>home</p>
+<app-carousel></app-carousel>
+<div class="body-home-1">
+  <app-offer-card [title]="'Produtos em Oferta'" [products]="offerProducts"></app-offer-card>
+  <app-offer-card [title]="'Produtos melhores avaliados'" [products]="topRatedProducts"></app-offer-card>
+  <app-offer-card [title]="'Descubra mais Produtos'" [products]="newProducts"></app-offer-card>
+  <div class="main-offer-last">
+    <app-login-box></app-login-box>
+    <app-ad-box [ad]="ad"></app-ad-box>
+  </div>
+</div>
 </body>

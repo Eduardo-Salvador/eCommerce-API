@@ -1,0 +1,18 @@
+.body-home-1 {
+  height: 100%;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+.main-offer-last {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 380px;
+  width: 300px;
+  margin-left: 10px;
+  align-items: center;
+}
