@@ -1,0 +1,22 @@
+.back-to-init-div{
+  height: 40px;
+}
+
+.btn-back-to-init{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: white;
+  background-color: #111184;
+  font-weight: 530;
+  font-size: 13px;
+}
+
+.btn-back-to-init:hover{
+  background-color: #111184;
+  opacity: 0.8;
+  cursor: pointer;
+}

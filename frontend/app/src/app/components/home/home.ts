@@ -5,11 +5,12 @@ import { LoginBox } from './components/login-box/login-box';
 import { AdBox } from './components/ad-box/ad-box';
 import { CardBestRatedProducts } from './components/card-best-rated-products/card-best-rated-products';
 import { RecommendationLogin } from './components/offer-login/recommendation-login';
+import { BackToInit } from './components/back-to-init/back-to-init';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Carousel, OfferCard, LoginBox, AdBox, CardBestRatedProducts, RecommendationLogin],
+  imports: [Carousel, OfferCard, LoginBox, AdBox, CardBestRatedProducts, RecommendationLogin, BackToInit],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

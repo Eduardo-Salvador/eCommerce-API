@@ -1,5 +1,5 @@
-import {Component, CUSTOM_ELEMENTS_SCHEMA, Input} from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Product } from '../../../../models/product.model';
 
 @Component({
