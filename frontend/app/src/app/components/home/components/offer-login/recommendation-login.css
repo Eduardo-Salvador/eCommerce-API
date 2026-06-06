@@ -1,0 +1,49 @@
+.recomentation-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 0.2;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  border-radius: 18px;
+  width: 1442px;
+  height: 150px;
+  background-color: white;
+}
+
+.txt-1{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.btn-login{
+  border-radius: 20px;
+  height: 35px;
+  width: 250px;
+  background: #2563eb;
+  border: none;
+  font-size: 14px;
+}
+
+.btn-login:hover{
+  color: white;
+  cursor: pointer;
+}
+
+.newClient{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.start-here{
+  color: orange;
+  font-weight: 400;
+}
+
+.start-here:hover{
+  color: black;
+  text-decoration: none;
+}

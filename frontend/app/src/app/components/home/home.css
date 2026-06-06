@@ -8,10 +8,18 @@
 }
 
 .body-home-3{
+  margin-top: 0;
+  padding-bottom: 20px;
+  background: linear-gradient(to right, #c3cfe2, #D6DEE2);
+}
+
+.body-home-4{
+  background: linear-gradient(to right, #c3cfe2, #D6DEE2);
+  display: flex;
+  justify-content: center;
   padding-top: 0;
   margin-top: 0;
-  height: 410px;
-  background: linear-gradient(to right, #c3cfe2, #D6DEE2);
+  height: 175px;
 }
 
 .body-home-1 > *, .body-home-2 > * {

@@ -4,11 +4,12 @@ import { OfferCard } from './components/offer-card/offer-card';
 import { LoginBox } from './components/login-box/login-box';
 import { AdBox } from './components/ad-box/ad-box';
 import { CardBestRatedProducts } from './components/card-best-rated-products/card-best-rated-products';
+import { RecommendationLogin } from './components/offer-login/recommendation-login';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Carousel, OfferCard, LoginBox, AdBox, CardBestRatedProducts],
+  imports: [Carousel, OfferCard, LoginBox, AdBox, CardBestRatedProducts, RecommendationLogin],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
