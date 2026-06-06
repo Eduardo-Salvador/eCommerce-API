@@ -1,0 +1,32 @@
+<div class="carousel-wrapper">
+  <div class="carousel-header">
+    <h2 class="carousel-title">Mais Vendidos em Eletrônicos</h2>
+    <a class="carousel-link">Veja mais bem avaliados</a>
+  </div>
+  <swiper-container slides-per-view="5" space-between="12" navigation="true">
+    @for (product of products; track product.id) {
+      <swiper-slide>
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img [ngSrc]="product.image" [alt]="product.alt" height="200" width="200">
+          </div>
+          <div class="product-info">
+            <p class="product-name">{{ product.name }}</p>
+            <div class="product-rating">
+              <div class="star-rating">
+                <div class="stars-empty">☆☆☆☆☆</div>
+                <div class="stars-filled" [style.width.%]="(product.review.rating / 5) * 100">★★★★★</div>
+              </div>
+              <span class="review-count">({{ product.review.count }})</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">R${{ formatPrice(product.price) }}</span>
+              <span class="price-old">R${{ formatPrice(product.oldPrice) }}</span>
+            </div>
+            <p class="product-delivery">Entrega <strong>GRÁTIS</strong> amanhã</p>
+          </div>
+        </div>
+      </swiper-slide>
+    }
+  </swiper-container>
+</div>

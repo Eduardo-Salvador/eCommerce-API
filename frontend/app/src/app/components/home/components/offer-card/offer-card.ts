@@ -13,5 +13,6 @@ import { RouterLink } from '@angular/router';
 })
 export class OfferCard {
   @Input() title: string = '';
+  @Input() offer: string = '';
   @Input() products: { image: string, alt: string }[] = [];
 }

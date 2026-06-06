@@ -1,18 +1,26 @@
-.body-home-1 {
-  height: 100%;
-  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+.body-home-1, .body-home-2{
+  height: 410px;
+  background: linear-gradient(to right, #c3cfe2, #D6DEE2);
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding-top: 10px;
+  padding: 10px 40px;
+}
+
+.body-home-3{
+  padding-top: 0;
+  margin-top: 0;
+  height: 410px;
+  background: linear-gradient(to right, #c3cfe2, #D6DEE2);
+}
+
+.body-home-1 > *, .body-home-2 > * {
+  flex: 0 0 340px;
 }
 
 .main-offer-last {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 380px;
-  width: 300px;
-  margin-left: 10px;
   align-items: center;
 }

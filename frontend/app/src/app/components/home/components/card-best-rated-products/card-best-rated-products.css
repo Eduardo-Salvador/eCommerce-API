@@ -1,0 +1,142 @@
+.carousel-wrapper {
+  background: white;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 0 19px 10px 19px;
+}
+
+.carousel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.carousel-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.carousel-link {
+  font-size: 13px;
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.carousel-link:hover {
+  text-decoration: underline;
+}
+
+swiper-container::part(button-next),
+swiper-container::part(button-prev) {
+  background: white;
+  width: 60px;
+  height: 20px;
+  padding: 35px 0px 35px 0px;
+  color: #111;
+  top: 50%;
+  box-shadow: 2px 2px 8px 2px rgba(0,0,0,0.2);
+  transform: translateY(-50%);
+}
+
+swiper-container::part(button-next):hover,
+swiper-container::part(button-prev):hover {
+  background: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+swiper-container::part(button-prev) {
+  border-radius: 0 10% 10% 0;
+}
+
+swiper-container::part(button-next) {
+  border-radius: 10% 0 0 10%;
+}
+
+.product-image-wrapper {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.product-name {
+  font-size: 13px;
+  color: #333;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.star-rating {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.stars-empty {
+  color: #ddd;
+}
+
+.stars-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #f59e0b;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.review-count {
+  color: #2563eb;
+  font-size: 12px;
+}
+
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price-current {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+}
+
+.price-old {
+  font-size: 12px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-delivery {
+  font-size: 12px;
+  color: #333;
+  margin: 0;
+}

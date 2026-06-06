@@ -1,7 +1,7 @@
 .main-offer{
   background: white;
   height: 380px;
-  width: 310px;
+  width: 305px;
   border-radius: 10px;
   padding: 12px 20px;
   display: flex;
@@ -17,11 +17,18 @@
   flex: 1;
 }
 
+.offer-grid.single {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .text-main-box{
   color: black;
   font-weight: 550;
   font-size: 22px;
   text-align: center;
+  line-height: 1.1;
 }
 
 .view-offers{

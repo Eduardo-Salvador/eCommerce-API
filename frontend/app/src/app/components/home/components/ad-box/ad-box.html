@@ -1,7 +1,7 @@
 <div class="ad-box">
-  @for (product of ad; track product.image) {
+  @for (ad of ad; track ad.image) {
     <a>
-      <img [ngSrc]="product.image" [alt]="product.alt" height="150" width="250">
+      <img [ngSrc]="ad.image" [alt]="ad.alt" height="150" width="250">
     </a>
   }
   <p class="ad-text">Patrocinado Ⓘ</p>

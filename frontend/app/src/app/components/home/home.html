@@ -1,12 +1,21 @@
 <body>
-<app-carousel></app-carousel>
-<div class="body-home-1">
-  <app-offer-card [title]="'Produtos em Oferta'" [products]="offerProducts"></app-offer-card>
-  <app-offer-card [title]="'Produtos melhores avaliados'" [products]="topRatedProducts"></app-offer-card>
-  <app-offer-card [title]="'Descubra mais Produtos'" [products]="newProducts"></app-offer-card>
-  <div class="main-offer-last">
-    <app-login-box></app-login-box>
-    <app-ad-box [ad]="ad"></app-ad-box>
+  <app-carousel></app-carousel>
+  <div class="body-home-1">
+    <app-offer-card [title]="'Produtos em Oferta'" [products]="offerProducts" [offer]="'Ver mais ofertas'"></app-offer-card>
+    <app-offer-card [title]="'Produtos melhores avaliados'" [products]="topRatedProducts" [offer]="'Ver mais ofertas'"></app-offer-card>
+    <app-offer-card [title]="'Descubra mais Produtos'" [products]="newProducts" [offer]="'Ver mais ofertas'"></app-offer-card>
+    <div class="main-offer-last">
+      <app-login-box></app-login-box>
+      <app-ad-box [ad]="ad"></app-ad-box>
+    </div>
   </div>
-</div>
+  <div class="body-home-2">
+    <app-offer-card [title]="'Festival Gamer: até 40% off'" [products]="gamerFestival" [offer]="'Ver mais'"></app-offer-card>
+    <app-offer-card [title]="'Queridinhos da semana'" [products]="favoritesOfWeek" [offer]="'Todos queridinhos da semana'"></app-offer-card>
+    <app-offer-card [title]="'Compre Kindle com frete GRÁTIS'" [products]="kindle"  [offer]="'Confira tudo sobre Kindle'"></app-offer-card>
+    <app-offer-card [title]="'Casa Inteligente'" [products]="smartHome"  [offer]="'Ver todos Dispositivos Inteligentes'"></app-offer-card>
+  </div>
+  <div class="body-home-3">
+    <app-card-best-rated-products></app-card-best-rated-products>
+  </div>
 </body>
