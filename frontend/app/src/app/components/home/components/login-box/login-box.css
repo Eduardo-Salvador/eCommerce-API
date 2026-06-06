@@ -1,4 +1,4 @@
-.login-box{
+.login-box {
   background: white;
   display: flex;
   flex-direction: column;
@@ -11,14 +11,14 @@
   align-items: center;
 }
 
-.text-main-box{
+.text-main-box {
   color: black;
   font-weight: 550;
   font-size: 22px;
   text-align: center;
 }
 
-.btn-login-offer{
+.btn-login-offer {
   border-radius: 20px;
   height: 35px;
   width: 275px;
@@ -28,7 +28,7 @@
   font-weight: bold;
 }
 
-.btn-login-offer:hover{
+.btn-login-offer:hover {
   color: #2563eb;
   cursor: pointer;
 }

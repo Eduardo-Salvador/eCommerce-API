@@ -1,4 +1,4 @@
-.body-home-1, .body-home-2{
+.body-home-1, .body-home-2 {
   height: 410px;
   background: linear-gradient(to right, #c3cfe2, #D6DEE2);
   display: flex;
@@ -7,13 +7,13 @@
   padding: 10px 40px;
 }
 
-.body-home-3{
+.body-home-3 {
   margin-top: 0;
   padding-bottom: 20px;
   background: linear-gradient(to right, #c3cfe2, #D6DEE2);
 }
 
-.body-home-4{
+.body-home-4 {
   background: linear-gradient(to right, #c3cfe2, #D6DEE2);
   display: flex;
   justify-content: center;

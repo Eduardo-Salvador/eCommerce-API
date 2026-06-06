@@ -1,4 +1,4 @@
-.recomentation-login{
+.recomentation-login {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,12 +12,12 @@
   background-color: white;
 }
 
-.txt-1{
+.txt-1 {
   font-size: 28px;
   font-weight: bold;
 }
 
-.btn-login{
+.btn-login {
   border-radius: 20px;
   height: 35px;
   width: 250px;
@@ -26,24 +26,24 @@
   font-size: 14px;
 }
 
-.btn-login:hover{
+.btn-login:hover {
   color: white;
   cursor: pointer;
 }
 
-.newClient{
+.newClient {
   display: flex;
   align-items: center;
   gap: 4px;
   font-size: 11px;
 }
 
-.start-here{
+.start-here {
   color: orange;
   font-weight: 400;
 }
 
-.start-here:hover{
+.start-here:hover {
   color: black;
   text-decoration: none;
 }

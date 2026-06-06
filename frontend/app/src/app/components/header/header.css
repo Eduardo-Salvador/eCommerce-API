@@ -35,14 +35,14 @@ mat-toolbar {
 }
 
 .update-cep {
-  color: #2563eb;
+  color: #111184;
   text-decoration: none;
   font-weight: 700;
   font-size: 15px;
 }
 
 .update-cep:hover {
-  text-decoration: underline;
+  color: #2563eb;
 }
 
 /*Search*/
@@ -100,7 +100,7 @@ mat-toolbar {
 }
 
 .btn-header:hover {
-  background: #fe601e;
+  color: white;
 }
 
 /*Cart*/

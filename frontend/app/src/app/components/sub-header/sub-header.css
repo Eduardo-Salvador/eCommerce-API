@@ -9,7 +9,7 @@ mat-toolbar {
   border-bottom: 1px solid #ffffff;
 }
 
-.sub-btn{
+.sub-btn {
   color: white;
   font-size: 13px;
   padding: 0 20px;
@@ -17,6 +17,6 @@ mat-toolbar {
   font-weight: 500;
 }
 
-.sub-btn:hover{
+.sub-btn:hover {
   border: 1px white solid;
 }

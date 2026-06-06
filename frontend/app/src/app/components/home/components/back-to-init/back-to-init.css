@@ -1,8 +1,8 @@
-.back-to-init-div{
+.back-to-init-div {
   height: 40px;
 }
 
-.btn-back-to-init{
+.btn-back-to-init {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@
   font-size: 13px;
 }
 
-.btn-back-to-init:hover{
+.btn-back-to-init:hover {
   background-color: #111184;
   opacity: 0.8;
   cursor: pointer;
