@@ -39,10 +39,14 @@ mat-toolbar {
   text-decoration: none;
   font-weight: 700;
   font-size: 15px;
+  background: transparent;
+  border: none;
+  text-align: left;
 }
 
 .update-cep:hover {
   color: #2563eb;
+  cursor: pointer;
 }
 
 /*Search*/

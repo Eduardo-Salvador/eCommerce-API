@@ -8,7 +8,7 @@
     <div class="address">
       <span>A entrega será feita em: </span>
       <span>{{address}}</span>
-      <a routerLink="" class="update-cep" (click)="$event.preventDefault(); updateCep()">Atualizar CEP</a>
+      <button class="update-cep" (click)="$event.preventDefault(); openCepModal()">Atualizar CEP</button>
     </div>
   </div>
   <div class="search">

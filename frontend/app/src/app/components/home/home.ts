@@ -6,6 +6,7 @@ import { AdBox } from './components/ad-box/ad-box';
 import { CardBestRatedProducts } from './components/card-best-rated-products/card-best-rated-products';
 import { RecommendationLogin } from './components/offer-login/recommendation-login';
 import { BackToInit } from './components/back-to-init/back-to-init';
+import { PopupService } from '../../services/cep/popup.service';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,8 @@ import { BackToInit } from './components/back-to-init/back-to-init';
   styleUrl: './home.css',
 })
 export class Home {
+  constructor(public popupService: PopupService) {}
+
   offerProducts = [
     { image: 'ofertas-home/iphone17.png', alt: 'iPhone' },
     { image: 'ofertas-home/galaxy26ultra.png', alt: 'Galaxy' },

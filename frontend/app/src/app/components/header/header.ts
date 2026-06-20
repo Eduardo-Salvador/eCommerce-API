@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { RouterLink } from '@angular/router';
+import { PopupService } from '../../services/cep/popup.service';
 
 @Component({
   selector: 'app-header',
@@ -33,7 +34,16 @@ export class Header {
   searchTerm = '';
   protected cartItemCount: number = 4;
 
-  updateCep() {}
+  constructor(private popupService: PopupService) {}
+
+  openCepModal() {
+    console.log('openCepModal');
+    this.popupService.updateCep();
+  }
+
+  closeCepModal() {
+    this.popupService.closeUpdateCep();
+  }
 
   loginRegister(): void {  }
 

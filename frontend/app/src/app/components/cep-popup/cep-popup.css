@@ -1,0 +1,122 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  width: 400px;
+  height: 250px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.modal-header {
+  height: 60px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9d9d9;
+  background: #B0C4DE;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.modal-content {
+  padding: 12px 28px 20px 28px;
+}
+
+.modal-content p {
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+  color: #444;
+  font-size: 12px;
+}
+
+.login-btn {
+  width: 100%;
+  height: 34px;
+  border: none;
+  border-radius: 999px;
+  background: #ffd814;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.separator {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.separator span {
+  flex: 1;
+  height: 1px;
+  background: #d5d5d5;
+}
+
+.separator p {
+  margin: 0;
+  color: #666;
+  white-space: nowrap;
+}
+
+.cep-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cep-container input {
+  height: 38px;
+  border: 1px solid #a9a9a9;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.cep-container input:first-child {
+  width: 120px;
+}
+
+.cep-container input:last-of-type {
+  width: 80px;
+}
+
+.confirm-btn {
+  height: 40px;
+  padding: 0 24px;
+  border: 1px solid #a9a9a9;
+  border-radius: 999px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirm-btn:hover {
+  background: #2563eb;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+}

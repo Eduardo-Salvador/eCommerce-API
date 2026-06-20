@@ -1,0 +1,26 @@
+@if (popupService.openCepPopUp | async) {
+  <div class="overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Escolha sua localização</h2>
+        <button (click)="popupService.closeUpdateCep()" class="close-btn">✕</button>
+      </div>
+
+      <div class="modal-content">
+        <p>As opções e velocidade de entrega podem variar de acordo com a região</p>
+        <button class="login-btn">Faça login</button>
+        <div class="separator">
+          <span></span>
+          <p>ou insira um CEP do Brasil</p>
+          <span></span>
+        </div>
+        <div class="cep-container">
+          <input type="text" maxlength="5" placeholder="">
+          <span>-</span>
+          <input type="text" maxlength="3" placeholder="">
+          <button class="confirm-btn">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
