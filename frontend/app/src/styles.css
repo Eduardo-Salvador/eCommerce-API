@@ -1,1 +1,20 @@
 @import '@angular/material/prebuilt-themes/azure-blue.css';
+
+app-header mat-toolbar {
+  overflow: visible !important;
+}
+
+app-header .btn-header .mdc-button__label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+app-header {
+  position: relative;
+  z-index: 1000;
+}
+
+app-header mat-toolbar {
+  overflow: visible !important;
+}

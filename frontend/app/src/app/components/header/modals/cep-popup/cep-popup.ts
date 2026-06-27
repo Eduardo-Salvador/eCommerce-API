@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PopupService } from '../../services/cep/popup.service';
+import { PopupService } from '../../../../services/cep/popup.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { PopupService } from './popup.service';
 
 describe('PopupService', () => {

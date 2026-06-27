@@ -1,0 +1,24 @@
+<div class="search-bar" [class.focused]="focused">
+  <div class="category-select">
+    <select (focus)="onFocus()" (blur)="onBlur()">
+      <option>Todos</option>
+      <option>Computadores</option>
+      <option>Games</option>
+      <option>Música</option>
+      <option>Casa</option>
+      <option>Eletrônicos</option>
+    </select>
+    <span class="material-icons chevron">expand_more</span>
+  </div>
+
+  <input
+    type="text"
+    placeholder="Pesquisar produtos..."
+    [(ngModel)]="query"
+    (focus)="onFocus()"
+  />
+
+  <button class="search-btn">
+    <span class="material-icons">search</span>
+  </button>
+</div>

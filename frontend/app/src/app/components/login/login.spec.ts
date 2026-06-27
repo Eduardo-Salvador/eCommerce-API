@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalCep } from './modal-cep';
+import { Login } from './login';
 
-describe('ModalCep', () => {
-  let component: ModalCep;
-  let fixture: ComponentFixture<ModalCep>;
+describe('Login', () => {
+  let component: Login;
+  let fixture: ComponentFixture<Login>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModalCep],
+      imports: [Login],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ModalCep);
+    fixture = TestBed.createComponent(Login);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

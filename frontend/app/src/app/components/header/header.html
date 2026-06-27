@@ -1,49 +1,57 @@
-<mat-toolbar>
-  <a routerLink=""><img ngSrc="logo.png" width="90" height="60 " alt="Logo" class="logo"/></a>
+<div class="header-wrapper">
+  <mat-toolbar>
+    <a routerLink=""><img ngSrc="logo.png" width="90" height="60" alt="Logo" class="logo"/></a>
 
-  <div class="div-address">
-    <div class="location-img">
-      <img ngSrc="location-header.png" width="15" height="20" alt="Location Icon">
+    <div class="div-address">
+      <div class="location-img">
+        <img ngSrc="location-header.png" width="15" height="20" alt="Location Icon">
+      </div>
+      <div class="address">
+        <span>A entrega será feita em: </span>
+        <span>{{address}}</span>
+        <button class="update-cep" (click)="$event.preventDefault(); openCepModal()">Atualizar CEP</button>
+      </div>
     </div>
-    <div class="address">
-      <span>A entrega será feita em: </span>
-      <span>{{address}}</span>
-      <button class="update-cep" (click)="$event.preventDefault(); openCepModal()">Atualizar CEP</button>
+
+    <app-search-bar (focusChange)="searchFocused = $event"></app-search-bar>
+
+    <div class="login-header" (mouseenter)="showMenu = true">
+      <button class="btn-header">
+        <span class="btn-top">Olá, faça seu login</span>
+        <span class="btn-bottom">Contas e Listas ▾</span>
+      </button>
+
+      <div class="login-menu" [style.display]="showMenu ? 'block' : 'none'">
+        <button class="login-btn-menu" (click)="loginRegister()">Faça seu login</button>
+        <p class="new-client">Cliente novo? <a href="#">Comece aqui.</a></p>
+        <hr>
+        <div class="menu-columns">
+          <div class="menu-col">
+            <strong>Suas listas</strong>
+            <a href="#">Criar uma Lista de desejos</a>
+            <a href="#">Lista do Bebê</a>
+          </div>
+          <div class="menu-col">
+            <strong>Sua conta</strong>
+            <a href="#">Sua conta</a>
+            <a href="#">Seus pedidos</a>
+            <a href="#">Sua Lista de desejos</a>
+            <a href="#">Continuar comprando</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="search">
-    <button
-      class="categories-button"
-      mat-button
-      [matMenuTriggerFor]="menu"
-      #trigger="matMenuTrigger"
-      (click)="trigger.openMenu()">
-      Todos ᐁ
+
+    <button mat-button class="cart-button" (click)="goToCart()">
+      <mat-icon
+        [matBadge]="cartItemCount"
+        [matBadgeHidden]="cartItemCount === 0"
+        matBadgeColor="warn">
+        shopping_cart
+      </mat-icon>
+      <span>Carrinho</span>
     </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Notebooks</button>
-      <button mat-menu-item>Celulares</button>
-      <button mat-menu-item>Monitores</button>
-    </mat-menu>
+  </mat-toolbar>
 
-    <mat-form-field appearance="outline" class="search-bar">
-      <mat-label>Pesquisar produtos</mat-label>
-      <input matInput [(ngModel)]="searchTerm">
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
-  </div>
-
-  <div class="login-header">
-    <button class="btn-header" mat-button (click)="loginRegister()">Entre ou Cadastre-se</button>
-  </div>
-
-  <button mat-button class="cart-button" (click)="goToCart()">
-    <mat-icon
-      [matBadge]="cartItemCount"
-      [matBadgeHidden]="cartItemCount === 0"
-      matBadgeColor="warn">
-      shopping_cart
-    </mat-icon>
-    <span>Carrinho</span>
-  </button>
-</mat-toolbar>
+  @if (searchFocused || showMenu) { <div class="search-overlay"></div> }
+</div>

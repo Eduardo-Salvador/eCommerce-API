@@ -5,7 +5,7 @@ import { SubHeader } from './components/sub-header/sub-header';
 import { register } from 'swiper/element/bundle';
 import { SubFooter } from './components/sub-footer/sub-footer';
 import { Footer } from './components/footer/footer';
-import { CepPopup } from './components/cep-popup/cep-popup';
+import { CepPopup } from './components/header/modals/cep-popup/cep-popup';
 
 register();
 

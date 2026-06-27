@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,11 +11,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { RouterLink } from '@angular/router';
 import { PopupService } from '../../services/cep/popup.service';
+import { SearchBar } from './components/search-bar/search-bar';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
+    CommonModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -24,7 +27,8 @@ import { PopupService } from '../../services/cep/popup.service';
     MatInputModule,
     MatMenuModule,
     MatBadgeModule,
-    RouterLink
+    RouterLink,
+    SearchBar
   ],
   templateUrl: './header.html',
   styleUrl: './header.css',
@@ -32,12 +36,20 @@ import { PopupService } from '../../services/cep/popup.service';
 export class Header {
   address: string = 'Hortolandia - SP 13183250';
   searchTerm = '';
+  searchFocused = false;
   protected cartItemCount: number = 4;
+  showMenu = false;
 
-  constructor(private popupService: PopupService) {}
+  constructor(private popupService: PopupService, private el: ElementRef) {}
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    if (!this.el.nativeElement.contains(event.target as Node)) {
+      this.showMenu = false;
+    }
+  }
 
   openCepModal() {
-    console.log('openCepModal');
     this.popupService.updateCep();
   }
 
@@ -45,7 +57,7 @@ export class Header {
     this.popupService.closeUpdateCep();
   }
 
-  loginRegister(): void {  }
+  loginRegister(): void {}
 
-  goToCart():void {}
+  goToCart(): void {}
 }
