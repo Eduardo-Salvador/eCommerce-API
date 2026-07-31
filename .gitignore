@@ -1,4 +1,3 @@
-HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -34,3 +33,8 @@ build/
 
 .gitattributes
 .env
+node_modules/
+
+### Claude ###
+/CLAUDE.md
+/ESTUDO.md
